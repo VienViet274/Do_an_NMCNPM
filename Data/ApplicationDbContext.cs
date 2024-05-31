@@ -15,6 +15,7 @@ namespace Do_an_NMCNPM.Data
         }
         public DbSet<Website_Destination> Destinations { get; set; }
         public DbSet<Conference> Conferences { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
