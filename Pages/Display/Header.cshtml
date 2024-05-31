@@ -1,0 +1,34 @@
+﻿@page
+@model Do_an_NMCNPM.Pages.Display.HeaderModel
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>A basic HTML table</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Date</th>
+    <th>Conference Name</th>
+    <th>Venue</th>
+  </tr>
+        @foreach (var a in Model.Conferences)
+        {
+            <tr>
+                <td>@a.Date</td>
+                <td><a href="Component?Id=@a.Id">@a.Name</a></td>
+                <td>@a.Venue</td>
+            </tr>
+        }
+
+</table>
+</body>
+</html>
