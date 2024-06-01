@@ -25,6 +25,7 @@ namespace Do_an_NMCNPM.Pages.Display
             else
             {
                 Conference = item;
+                
 
             }
         }

@@ -17,5 +17,6 @@ namespace Do_an_NMCNPM.Pages
         {
             var List = _db.Destinations.ToList();
         }
+        
     }
 }

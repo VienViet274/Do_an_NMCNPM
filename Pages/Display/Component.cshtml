@@ -2,5 +2,93 @@
 @model Do_an_NMCNPM.Pages.Display.ComponentModel
 @{
 }
-<div class="text-center">Conference Deatils</div>
-<h6>Description:</h6>@Model.Conference.Description
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            color: #333;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .header {
+            color: green;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        h6 {
+            font-size: 16px;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        p {
+            color: red;
+            margin: 0 0 20px;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="text-center header">Conference Details</div>
+
+    <h1>@Model.Conference.Name</h1>
+
+    <h6>Description:</h6>
+    <p>@Model.Conference.Description</p>
+
+    <h6>Type:</h6>
+    <p>@Model.Conference.Type</p>
+
+    <h6>Status:</h6>
+    <p>@Model.Conference.Status</p>
+
+    <h6>Venue:</h6>
+    <p>@Model.Conference.Venue</p>
+
+    <h6>Conference Date:</h6>
+    <p>@Model.Conference.ConferenceDates</p>
+
+    <h6>Deadline Date:</h6>
+    <p>@Model.Conference.Deadline</p>
+
+    <h6>Category of Conference:</h6>
+    <p>@Model.Conference.Category</p>
+
+    <h6>Topic of Conference:</h6>
+    <p>@Model.Conference.Topics</p>
+
+    <h6>Organizer:</h6>
+    <p>@Model.Conference.Organizer</p>
+
+    <h6>Website:</h6>
+    <p><a href="@Model.Conference.Website" target="_blank">Link</a></p>
+
+</body>
+</html>
+
+

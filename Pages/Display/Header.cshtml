@@ -2,33 +2,123 @@
 @model Do_an_NMCNPM.Pages.Display.HeaderModel
 @{
 }
-
 <!DOCTYPE html>
-<html>
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
-<body>
-
-<h2>A basic HTML table</h2>
-
-<table style="width:100%">
-  <tr>
-    <th>Date</th>
-    <th>Conference Name</th>
-    <th>Venue</th>
-  </tr>
-        @foreach (var a in Model.Conferences)
-        {
-            <tr>
-                <td>@a.Date</td>
-                <td><a href="Component?Id=@a.Id">@a.Name</a></td>
-                <td>@a.Venue</td>
-            </tr>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
         }
 
-</table>
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+
+        .box-tools {
+            margin-bottom: 20px;
+        }
+
+            .box-tools a {
+                padding: 8px 16px;
+                margin: 5px;
+                background-color: #ddd;
+                color: black;
+                text-decoration: none;
+                border-radius: 4px;
+                display: inline-block;
+            }
+
+                .box-tools a:hover {
+                    background-color: #ccc;
+                }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <form method="post">
+        <label>Search by name of conference</label><br />
+        <input type="text" name="keyword" /><br />
+        <input type="submit" value="Search" /><br />
+    </form>
+
+    <div class="box-tools">
+        @for (int i = 1; i <= Model.TotalPage; i++)
+        {
+            <a href="Header?PageCount=@i">@i</a>
+        }
+    </div>
+
+    @if (Model.Conferences != null && Model.Conferences.Count > 0)
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Venue</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sp in Model.itemOnPage.ToList())
+                {
+                    <tr>
+                        <td>@sp.Date</td>
+                        <td><a href="Component?Id=@sp.Id">@sp.Name</a></td>
+                        <td>@sp.Venue</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="no-results">
+            <p class="text-center">@Model.Chuoi</p>
+        </div>
+    }
 </body>
 </html>

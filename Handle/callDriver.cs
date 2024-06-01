@@ -15,7 +15,7 @@ namespace Do_an_NMCNPM.Handle
             {
                 driver.Navigate().GoToUrl($"https://www.conferenceineurope.org/information_technology.php?page={i}");
                 IReadOnlyCollection<IWebElement> productElements = driver.FindElements(By.ClassName("data1"));
-                //int k = 0;
+                int k = 0;
                 foreach (IWebElement productElement in productElements)
                 {
                     // Extract the name and price of the product
@@ -64,13 +64,13 @@ namespace Do_an_NMCNPM.Handle
                     conference.WebsiteCraw_ID = 1;
                   //  conference.Email = email;
                     items.Add(conference);
-                    //k++;
+                    k++;
                     driver2.Quit();
-                    //if (k == 1)
-                    //{
-                    //    break;
-                    //}
-                  
+                    if (k == 1)
+                    {
+                        break;
+                    }
+
                 }
 
             }
