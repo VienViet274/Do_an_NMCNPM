@@ -11,7 +11,7 @@ namespace Do_an_NMCNPM.Handle
         public List<Conference> crawlConference()
         {
             List<Conference> items = new List<Conference>();
-            for (int i = 1; i < 3; i++)
+            for (int i = 1; i < 2; i++)
             {
                 driver.Navigate().GoToUrl($"https://www.conferenceineurope.org/information_technology.php?page={i}");
                 IReadOnlyCollection<IWebElement> productElements = driver.FindElements(By.ClassName("data1"));

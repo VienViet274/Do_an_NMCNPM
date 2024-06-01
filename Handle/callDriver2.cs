@@ -59,7 +59,7 @@ namespace Do_an_NMCNPM.Handle
                     items.Add(conference);
                     k++;
                     driver2.Quit();
-                    if (k == 50)
+                    if (k == 10)
                     {
                         break;
                     }
