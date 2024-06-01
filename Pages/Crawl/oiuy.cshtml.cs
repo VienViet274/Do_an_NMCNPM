@@ -16,7 +16,6 @@ namespace Do_an_NMCNPM.Pages.Crawl
         {
             callDriver callDriver = new callDriver();
             var ans = callDriver.crawlConference();
-            int k = 0;
             _db.Conferences.AddRange(ans);
             _db.SaveChanges();
         }

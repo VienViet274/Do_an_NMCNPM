@@ -54,12 +54,12 @@ namespace Do_an_NMCNPM.Handle
                     
                     conference.Organizer = Org;
                     conference.Website = web;
-                    conference.WebsiteCraw_ID = 2;
+                    conference.WebsiteCraw_ID = 38;
                     conference.Email = email;
                     items.Add(conference);
                     k++;
                     driver2.Quit();
-                    if (k == 2)
+                    if (k == 50)
                     {
                         break;
                     }
